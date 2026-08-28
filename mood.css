@@ -1,0 +1,368 @@
+/* mood_ai css part start here */
+/* ================================
+   Mood AI Section (scoped)
+================================ */
+
+#mood_ai .moodai-app{
+  display:flex;
+  gap:14px;
+  min-height: 75vh;
+}
+
+/* inner rail */
+#mood_ai .rail{
+  width:290px;
+  padding:18px 16px;
+  border-right: 1px solid rgba(255,255,255,0.06);
+  background: rgba(0,0,0,0.12);
+  backdrop-filter: blur(10px);
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  border-radius: var(--radius);
+}
+
+#mood_ai .brand{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  padding:12px 12px;
+  border-radius: var(--radius);
+  background: linear-gradient(145deg, rgba(0,229,255,0.09), rgba(255,64,129,0.05));
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: var(--shadow);
+}
+#mood_ai .brand .logo{
+  width:46px;height:46px;
+  border-radius: 14px;
+  display:grid;place-items:center;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.08);
+  font-size:20px;
+}
+#mood_ai .brand .name{ font-weight:700; letter-spacing:.4px; }
+#mood_ai .brand .sub{ font-size:12px; color:var(--muted); margin-top:2px; }
+
+#mood_ai .rail-card{
+  padding:14px;
+  border-radius: var(--radius);
+  background: var(--card);
+  border: 1px solid rgba(255,255,255,0.07);
+  box-shadow: var(--shadow);
+}
+#mood_ai .rail-title{ font-weight:700; margin-bottom:10px; }
+
+#mood_ai .rail-btn,
+#mood_ai .btn{
+  padding:10px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(0,229,255,0.26);
+  background: rgba(0,229,255,0.10);
+  color:var(--text);
+  cursor:pointer;
+  transition:.15s ease;
+  display:flex; align-items:center; justify-content:center; gap:10px;
+}
+#mood_ai .rail-btn{ width:100%; padding:10px 12px; }
+#mood_ai .rail-btn:hover,
+#mood_ai .btn:hover{ transform: translateY(-1px); background: rgba(0,229,255,0.14); }
+
+#mood_ai .rail-btn.ghost{
+  margin-top:10px;
+  border: 1px solid rgba(255,64,129,0.25);
+  background: rgba(255,64,129,0.08);
+}
+#mood_ai .rail-btn.ghost:hover{ background: rgba(255,64,129,0.12); }
+
+#mood_ai .btn.ghost{
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.06);
+}
+#mood_ai .btn.ghost:hover{ background: rgba(255,255,255,0.09); }
+
+#mood_ai .rail-foot{ margin-top:auto; padding:10px 8px; opacity:.9; }
+
+/* main area */
+#mood_ai .main{
+  flex:1;
+  padding:12px 12px 18px;
+  overflow:auto;
+}
+
+#mood_ai .topbar{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:16px;
+  padding:6px 6px 14px;
+}
+#mood_ai .topbar h1{ margin:0; font-size:28px; letter-spacing:.2px; }
+#mood_ai .muted{ color:var(--muted); }
+#mood_ai .small{ font-size:12px; }
+
+#mood_ai .top-actions{ display:flex; gap:10px; align-items:center; }
+
+#mood_ai .grid{
+  display:grid;
+  grid-template-columns: 1.1fr 1.2fr 1.0fr;
+  gap:14px;
+  align-items:start;
+}
+
+#mood_ai .card{
+  padding:16px;
+  border-radius: var(--radius);
+  background: var(--card);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: var(--shadow);
+  position:relative;
+  overflow:hidden;
+}
+#mood_ai .card::before{
+  content:"";
+  position:absolute; inset:-2px;
+  background:
+    radial-gradient(260px 160px at 20% 0%, rgba(0,229,255,0.16), transparent 60%),
+    radial-gradient(240px 150px at 80% 0%, rgba(255,64,129,0.14), transparent 60%);
+  pointer-events:none;
+}
+#mood_ai .card > *{ position:relative; }
+
+#mood_ai .card-head h2{ margin:0; font-size:18px; }
+#mood_ai .meta{ font-size:12px; color:var(--muted); margin-top:6px; }
+
+#mood_ai .chips{ display:flex; flex-wrap:wrap; gap:10px; margin-top:12px; }
+#mood_ai .chip{
+  border: 1px solid rgba(0,229,255,0.22);
+  background: rgba(0,229,255,0.08);
+  color: var(--text);
+  padding:8px 10px;
+  border-radius: 999px;
+  cursor:pointer;
+  transition:.15s ease;
+  font-size:13px;
+}
+#mood_ai .chip:hover{ transform: translateY(-1px); background: rgba(0,229,255,0.12); }
+#mood_ai .chip.active{
+  border-color: rgba(0,229,255,0.55);
+  box-shadow: 0 0 0 2px rgba(0,229,255,0.10) inset;
+}
+
+#mood_ai .divider{ height:1px; background: rgba(255,255,255,0.07); margin:14px 0; }
+
+#mood_ai .row{ display:grid; grid-template-columns: 1fr 1fr 1fr; gap:10px; }
+#mood_ai .field label{ display:block; font-size:12px; color:var(--muted); margin-bottom:6px; }
+
+#mood_ai select{
+  width:100%;
+  padding:10px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(0,0,0,0.20);
+  color: var(--text);
+  outline:none;
+}
+
+#mood_ai .hint{
+  margin-top:12px;
+  font-size:12px;
+  color: var(--muted);
+  padding:10px 12px;
+  border-radius: 14px;
+  border: 1px dashed rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.03);
+}
+
+#mood_ai .radar-wrap{
+  margin-top:12px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(0,0,0,0.18);
+  padding:12px;
+}
+#mood_ai .radar-legend{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-top:10px;
+  font-size:12px;
+}
+#mood_ai .legend-item{ display:flex; align-items:center; gap:8px; }
+#mood_ai .dot{
+  width:10px; height:10px; border-radius:50%;
+  background: var(--accent);
+  box-shadow: 0 0 14px rgba(0,229,255,0.55);
+}
+
+#mood_ai .sliders{
+  margin-top:14px;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:12px;
+}
+#mood_ai .sld{
+  padding:10px 12px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03);
+}
+#mood_ai .sld .top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  margin-bottom:8px;
+}
+#mood_ai .sld .name{ display:flex; gap:10px; align-items:center; font-weight:700; font-size:13px; }
+#mood_ai .sld .val{ font-size:12px; color:var(--muted); }
+#mood_ai input[type="range"]{ width:100%; }
+
+#mood_ai .assistant .chat{
+  height:210px;
+  overflow:auto;
+  padding:8px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(0,0,0,0.18);
+}
+#mood_ai .bubble{
+  padding:10px 12px;
+  border-radius: 16px;
+  margin:8px 0;
+  width: fit-content;
+  max-width: 92%;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+#mood_ai .bubble.bot{ background: rgba(0,229,255,0.07); border-color: rgba(0,229,255,0.18); }
+#mood_ai .bubble.user{ margin-left:auto; background: rgba(255,64,129,0.06); border-color: rgba(255,64,129,0.18); }
+
+#mood_ai .chatbar{ display:flex; gap:10px; margin-top:10px; }
+#mood_ai .chatbar input{
+  flex:1;
+  padding:10px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(0,0,0,0.20);
+  color: var(--text);
+  outline:none;
+}
+
+#mood_ai .quick{ display:flex; flex-wrap:wrap; gap:10px; margin-top:10px; }
+#mood_ai .pill{
+  padding:8px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.05);
+  color: var(--text);
+  cursor:pointer;
+}
+#mood_ai .pill:hover{ background: rgba(255,255,255,0.08); }
+
+#mood_ai .results{ margin-top:16px; }
+#mood_ai .results-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:14px;
+  padding:6px;
+}
+#mood_ai .results-head h2{ margin:0; font-size:18px; }
+#mood_ai .cards{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:14px;
+}
+
+#mood_ai .hero,
+#mood_ai .game-card{
+  padding:16px;
+  border-radius: var(--radius);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: var(--shadow);
+}
+#mood_ai .hero{
+  background: linear-gradient(145deg, rgba(0,229,255,0.10), rgba(255,64,129,0.07));
+  border: 1px solid rgba(0,229,255,0.22);
+  margin: 8px 0 14px;
+}
+
+#mood_ai .g-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:12px; }
+#mood_ai .g-name{ font-weight:700; font-size:16px; }
+#mood_ai .badges{ display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+#mood_ai .badge{
+  font-size:12px;
+  padding:6px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.05);
+  color: var(--text);
+}
+#mood_ai .badge.accent{ border-color: rgba(0,229,255,0.28); background: rgba(0,229,255,0.08); }
+#mood_ai .badge.pink{ border-color: rgba(255,64,129,0.28); background: rgba(255,64,129,0.08); }
+
+#mood_ai .price{ text-align:right; }
+#mood_ai .price .was{ text-decoration: line-through; color: var(--muted); font-size:12px; }
+#mood_ai .price .now{ color: var(--green); font-weight:700; }
+
+#mood_ai .why{
+  margin-top:12px;
+  font-size:12px;
+  color: var(--muted);
+  line-height:1.5;
+  padding:10px 12px;
+  border-radius: 14px;
+  border: 1px dashed rgba(255,255,255,0.14);
+  background: rgba(0,0,0,0.12);
+}
+
+#mood_ai .actions{ display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; }
+#mood_ai .action{
+  flex:1;
+  min-width: 130px;
+  padding:10px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.06);
+  color: var(--text);
+  cursor:pointer;
+}
+#mood_ai .action:hover{ background: rgba(255,255,255,0.09); }
+#mood_ai .action.love{ border-color: rgba(0,229,255,0.30); background: rgba(0,229,255,0.08); }
+#mood_ai .action.nope{ border-color: rgba(255,64,129,0.30); background: rgba(255,64,129,0.07); }
+
+#mood_ai .taste .tag{
+  display:inline-block;
+  margin:6px 6px 0 0;
+  padding:6px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.05);
+  font-size:12px;
+}
+#mood_ai .taste .tag.good{ border-color: rgba(0,229,255,0.25); background: rgba(0,229,255,0.08); }
+#mood_ai .taste .tag.bad{ border-color: rgba(255,64,129,0.22); background: rgba(255,64,129,0.07); }
+
+#mood_ai .mood-history{ display:flex; flex-wrap:wrap; gap:8px; }
+#mood_ai .mood-pill{
+  font-size:12px;
+  padding:6px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.05);
+  cursor:pointer;
+}
+#mood_ai .mood-pill:hover{ background: rgba(255,255,255,0.08); }
+
+#mood_ai .footer{ margin-top:16px; padding:10px 6px 20px; }
+
+/* responsive */
+@media (max-width: 1200px){
+  #mood_ai .grid{ grid-template-columns: 1fr; }
+  #mood_ai .rail{ display:none; }
+  #mood_ai .row{ grid-template-columns: 1fr; }
+  #mood_ai .sliders{ grid-template-columns: 1fr; }
+  #mood_ai .cards{ grid-template-columns: 1fr; }
+}
+
+/* mood_ai css part end  here */
